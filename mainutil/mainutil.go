@@ -26,7 +26,7 @@ func TrapSignals() context.Context {
 // Run runs fn and checks for error.
 func Run(fn func() error) {
 	if err := fn(); err != nil && err != context.Canceled {
-		fmt.Fprintf(os.Stderr, "%+v", err)
+		fmt.Fprintf(os.Stderr, "%+v\n", err)
 		os.Exit(1)
 	}
 }
